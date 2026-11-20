@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SpeedAlert | Road Safety</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <header>
+        <h1>🚦 SpeedAlert</h1>
+        <p>Smart Road Hazard Intelligence & Early Warning System</p>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h2>Building Safer Roads Together</h2>
+            <p>Report road hazards and help protect drivers.</p>
+        </section>
+
+        <section class="report-section">
+            <h2>Report a Road Hazard</h2>
+
+            {% if message %}
+                <p class="message">{{ message }}</p>
+            {% endif %}
+
+            <form action="{{ url_for('main.report_hazard') }}"
+                  method="POST">
+
+                <label>Hazard Type *</label>
+                <select name="hazard_type" required>
+                    <option value="">Select hazard</option>
+                    <option value="Speed Breaker">Speed Breaker</option>
+                    <option value="Pothole">Pothole</option>
+                    <option value="Damaged Road">Damaged Road</option>
+                    <option value="Open Manhole">Open Manhole</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <label>Description</label>
+                <textarea name="description"
+                          placeholder="Describe the road hazard"></textarea>
+
+                <label>Latitude *</label>
+                <input type="number" step="any" name="latitude"
+                       placeholder="Example: 17.0000000" required>
+
+                <label>Longitude *</label>
+                <input type="number" step="any" name="longitude"
+                       placeholder="Example: 82.0000000" required>
+
+                <label>Road Type *</label>
+                <select name="road_type" required>
+                    <option value="">Select road type</option>
+                    <option value="Village Road">Village Road</option>
+                    <option value="Highway">Highway</option>
+                    <option value="City Road">City Road</option>
+                </select>
+
+                <label>Severity *</label>
+                <select name="severity" required>
+                    <option value="">Select severity</option>
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
+                </select>
+
+                <label>Visibility *</label>
+                <select name="visibility" required>
+                    <option value="">Select visibility</option>
+                    <option value="Clearly Visible">Clearly Visible</option>
+                    <option value="Poorly Visible">Poorly Visible</option>
+                    <option value="Not Visible">Not Visible</option>
+                </select>
+
+                <button type="submit">Submit Hazard Report</button>
+
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>SpeedAlert | Building Safer Roads Together</p>
+    </footer>
+
+</body>
+</html>

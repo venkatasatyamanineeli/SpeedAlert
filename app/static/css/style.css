@@ -1,0 +1,100 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f1f5f9;
+    color: #1e293b;
+}
+
+header {
+    background: #102a43;
+    color: white;
+    text-align: center;
+    padding: 30px 15px;
+}
+
+header h1 {
+    margin-bottom: 10px;
+    font-size: 32px;
+}
+
+.hero {
+    text-align: center;
+    padding: 40px 15px 20px;
+}
+
+.hero h2 {
+    margin-bottom: 12px;
+    color: #102a43;
+}
+
+.report-section {
+    max-width: 650px;
+    margin: 25px auto 60px;
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.report-section h2 {
+    margin-bottom: 25px;
+    color: #102a43;
+}
+
+form label {
+    display: block;
+    margin: 15px 0 7px;
+    font-weight: bold;
+}
+
+form input,
+form select,
+form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+form textarea {
+    min-height: 90px;
+    resize: vertical;
+}
+
+form button {
+    width: 100%;
+    margin-top: 25px;
+    padding: 14px;
+    border: none;
+    border-radius: 6px;
+    background: #0f766e;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+form button:hover {
+    background: #115e59;
+}
+
+.message {
+    margin-bottom: 15px;
+    padding: 12px;
+    background: #dcfce7;
+    color: #166534;
+    border-radius: 6px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #64748b;
+}
